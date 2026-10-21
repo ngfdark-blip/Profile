@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEZOU | MY PROFILE</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            color: #ffffff;
+        }
+
+        /* Overlay for black/dark contrast like in screenshot */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Profile picture with thin white ring around it */
+        .profile-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            display: block;
+        }
+
+        /* Title & Subtitle exact styling */
+        .profile-name {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .profile-sub {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.65);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* Links container */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Buttons matching screenshot exact frame style */
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .link-card:hover {
+            background: rgba(35, 35, 35, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .left-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Icon Badge Circle inside buttons */
+        .icon-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+        }
+
+        /* Platform specific colors for icon badges */
+        .bg-youtube {
+            background: #FF0000;
+            border: none;
+        }
+        .bg-telegram {
+            background: #2AABEE;
+            border: none;
+        }
+        .bg-tiktok {
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .link-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* Arrow Icon on the right side */
+        .arrow-icon {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .link-card:hover .arrow-icon {
+            color: #ffffff;
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <!-- Profile Image linked to profile.png -->
+        <div class="profile-wrapper">
+            <img src="profile.png" alt="Profile" class="profile-img" onerror="this.src='https://via.placeholder.com/110'">
+        </div>
+
+        <!-- Name & Subtitle -->
+        <h1 class="profile-name">ZEZOU</h1>
+        <div class="profile-sub">MY PROFILE</div>
+
+        <!-- Links Container -->
+        <div class="links-container">
+            
+            <!-- YouTube Link -->
+            <a href="https://www.youtube.com/@zezou-s2u" target="_blank" class="link-card">
+                <div class="left-content">
+                    <div class="icon-badge bg-youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <span class="link-text">Join YouTube Channel</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- Drama Telegram Link -->
+            <a href="https://t.me/zezodrama4m" target="_blank" class="link-card">
+                <div class="left-content">
+                    <div class="icon-badge bg-telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </div>
+                    <span class="link-text">Join Drama Channel</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- Subtitled Movies Telegram Link -->
+            <a href="https://t.me/HamarangMovies4z11" target="_blank" class="link-card">
+                <div class="left-content">
+                    <div class="icon-badge bg-telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </div>
+                    <span class="link-text">Join Subtitled Drama</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- TikTok Link -->
+            <a href="https://tiktok.com/@z.ez_00" target="_blank" class="link-card">
+                <div class="left-content">
+                    <div class="icon-badge bg-tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <span class="link-text">Join TikTok</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
